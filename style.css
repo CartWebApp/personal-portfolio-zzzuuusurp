@@ -1,0 +1,521 @@
+/* root colors */
+:root {
+    --darkBlue: #0D21A1;
+    --white: #EEF0F2;
+    --transparentWhite: #eef0f283;
+    --brown: #34312D;
+    --black: #14110F;
+    --lightBlue: #3185FC;
+    --cartYellow: #f6a91b;
+    --cartRed: #d74f27;
+    --cartGreen: #019b83;
+    --cartBlue: #0c3c60;
+}
+/* body stuff like font and colors */
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    text-shadow: 1px 1px 1px black;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+/* navbar */
+nav {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid var(--black);
+    background-color: var(--transparentWhite);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+nav a {
+    padding: 5px;
+    background-color: gray;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #EEF0F2;
+}
+nav a:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+/* full body  */
+#body {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+}
+#body::-webkit-scrollbar {
+    visibility: hidden;
+}
+/* hero image stuff */
+#hero {
+    scroll-snap-align: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px auto;
+    padding: 0px;
+    background-image: url(stuff/galaxy.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 3s forwards ease-out; 
+
+}
+#hiMyName {
+    text-align: left;
+}
+#hero h3 {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 2em;
+    animation: moveRight 4s ease-out;
+}
+#hero h1 {
+    color: aliceblue;
+    text-shadow: 2px 2px 2px black;
+    font-size: 5em;
+    animation: moveLeft 4s forwards ease-out;
+}
+button {
+    box-shadow: 2px 2px 2px black;
+}
+/* about me  */
+#aboutMe {
+    scroll-snap-align: top;
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    padding: clamp(5px, 20vh, 100px), clamp(10px, 10vw, 80px);
+    justify-self: center;
+    margin: clamp(20px, 10vh, 50px);
+}
+#aboutMe section {
+    background-color: var(--darkBlue);
+    color: var(--white);
+    border: 1px solid white;
+    border-radius: 20px;
+    width: clamp(300px, 50vw, 60%);
+    padding: clamp(10px, 5vh, 20px);
+}
+#aboutMe section h2 {
+    font-size: clamp(2em, 48px, 5em);
+    text-shadow: 2px 2px 2px lightgray;
+}
+#aboutMe section h4 {
+    font-size: clamp(1.5em, 32px, 3em);
+    text-shadow: 1px 1px 1px lightgray;
+}
+#aboutMe section ul {
+    border-top: 2px solid white;
+    padding: clamp(10px, 5vh, 20px) 0px;
+}
+#aboutMe section ul li {
+    display: block;
+    width: 100%;
+    border-top: 1px solid white;
+    padding: clamp(5px, 2vh, 10px) 0px;
+    font-size: clamp(1em, 24px, 2em);
+}
+#aboutMe section ul li:first-child {
+    border-top: none;
+}
+#aboutMe img {
+    width: clamp(200px, 30%, 400px);
+    height: auto;
+    align-self: center;
+    justify-self: flex-end;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+/* cart section */
+#cart {
+    background-color: var(--cartYellow);
+    padding: clamp(5px, 5vw, 15px);
+}
+#cart h2 {
+    font-size: clamp(2em, 48px, 3em);
+    text-align: center;
+}
+#cart ol {
+    display: flex;
+    flex-direction: column;
+    list-style-type: decimal;
+    overflow-x: visible;
+}
+#cart ol li {
+    margin: clamp(3px, 2vh, 10px);
+    font-size: clamp(24px, 1.5em, 36px);
+}
+#cart ol li:last-child {
+    color: var(--cartRed);
+}
+#cart ol li:nth-child(2) {
+    color: var(--cartBlue);
+}
+#cart ol li:first-of-type {
+    color: var(--cartGreen);
+}
+#cart img {
+    display: block;
+    justify-self: center;
+}
+#cart ol::-webkit-scrollbar {
+    display: none;
+}
+.cart {
+    padding: 3vh 4vw;
+    margin-bottom: 3vh;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.cart:last-child {
+    background-color: var(--cartRed);
+}
+.cart:nth-child(even) {
+    background-color: var(--cartBlue);
+}
+.cart:first-of-type {
+    background-color: var(--cartGreen);
+}
+
+.cart h4 {
+    text-shadow: 1px 1px 1px gray;
+}
+
+/* carousel */
+#projectList {
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--brown);
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+#projectList::-webkit-scrollbar {
+    visibility: hidden;
+}
+.thingy {
+    box-sizing: border-box;
+    padding: clamp(10px, 5vh, 20px);
+    margin: auto;
+    height: clamp(85vh, 100%, 100vh);
+    flex: 0 0 100%;
+    flex-direction: column;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 200ms forwards ease-out;
+    background-color: var(--transparentWhite);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.thingy h2 {
+    color: var(--black);
+    background-color: var(--transparentWhite);
+    padding: 5px;
+    font-size: clamp(2em, 48px, 5em);
+    text-shadow: 2px 2px 2px lightgray;
+}
+.thingy p {
+    background-color: var(--transparentWhite);
+    color: var(--black);
+    padding: 5px;
+    font-size: clamp(1em, 24px, 2em);
+}
+.thingy a {
+    display: block;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid var(--black);
+    color: var(--white);
+    width: 40%;
+}
+.buttonList {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: clamp(10px, 10vh, 30px);
+}
+.buttonList button {
+    text-decoration: none;
+    padding: 7px 25px;
+    border-radius: 20px;
+}
+.nextBtn {
+    background-color: var(--lightBlue);
+}
+.prevBtn {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+.nextBtn:hover {
+    background-color: white;
+    color: black;
+}
+.prevBtn:hover {
+    background-color: white;
+    color: black;
+}
+.thingy h3 {
+    font-size: clamp(1.5em, 32px, 3em);
+}
+.thingy a {
+    background-color: var(--lightBlue);
+    text-decoration: none;
+    padding: 7px 25px;
+    border-radius: 20px;
+}
+/* 5 year plan stuff */
+#yearPlans {
+    display: flex;
+    width: fit-content;
+    height: calc(100vh - 20vh);
+    border: 1px solid red;
+    overflow-x: scroll;
+    margin: 0px;
+}
+#yearPlans::-webkit-scrollbar {
+    display: none;
+}
+.year {
+    display: none;
+    animation: spinFadeIn 500ms forwards;
+    height: 100%;
+    width: 100vw;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    scroll-snap-align: center;
+    background-color: var(--cartRed);
+}
+.year:first-child {
+    display: flex;
+}
+.year:nth-child(odd) {
+    background-color: var(--darkBlue);
+}
+.year:nth-child(odd) h2 {
+    color: var(--black);
+    text-shadow: 2px 2px 2px white;
+}
+.year h2 {
+    font-size: clamp(3em, 48px, 3.5em);
+    color: var(--cartGreen);
+    text-shadow: var(--black) 2px 2px 2px;
+}
+.year p {
+    font-size: clamp(1.2em, 24px, 1.7em);
+}
+/* ending links */
+#finalLinks {
+    background-color: var(--cartGreen);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#finalLinks a {
+    padding: 10px;
+    background-color: var(--cartGreen);
+    border-radius: 20px;
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    width: 30%;
+    text-align: center;
+}
+#finalLinks a:hover {
+    background-color: var(white);
+    color: var(--black);
+}
+
+/* case study */
+#chooseProject {
+    width: 70vw;
+    margin: 20px auto;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.centerHeader {
+    text-align: center;
+}
+
+h1.centerHeader {
+    font-size: clamp(2em, 48px, 5em);
+    text-shadow: 2px 2px 2px lightgray;
+}
+
+#content {
+    box-sizing: border-box;
+    width: 100vw;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+.step {
+    scroll-snap-align: center;
+    background-color: var(--darkBlue);
+    color: var(--white);
+    padding: clamp(5px, 2vh, 10px) clamp(10px, 2vw, 20px);
+    box-sizing: border-box;
+    min-height: 100%;
+    height: fit-content;
+    margin: clamp(10px, 2vh, 20px) auto;
+}
+
+.step:nth-child(even) {
+    background-color: var(--lightBlue);
+    color: var(--black);
+}
+
+.list {
+    list-style: none;
+    padding: 0px;
+    padding: clamp(5px, 2vh, 10px) clamp(10px, 2vw, 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.list li {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: clamp(10px, 5vh, 20px) auto;
+    border-top: 1px solid white;
+    padding: clamp(5px, 2vh, 10px) 0px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.spin {
+    animation: spinFadeIn 2s ease-in;
+}
+
+.moveLeft {
+    animation: moveLeft 1s ease-out;
+}
+
+.moveRight {
+    animation: moveRight 1s ease-out;
+}
+/* fomr stuff */
+#form h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+form {
+    display: flex;
+    width: 90vw;
+    margin: 10px auto;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 20px;
+}
+form input {
+    width: 80%;
+    height: clamp(15px, 5vh, 30px);
+    margin: clamp(10px, 4vh, 25px) auto;
+    border-radius: 10px;
+}
+input#things {
+    height: fit-content;
+    padding: 5px;
+    padding-bottom: 100px;
+    text-align: start;
+}
+.thanks {
+    display: block;
+    width: fit-content;
+    margin: auto;
+}
+#socialButtons {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    list-style: none;
+}
+#socialButtons li {
+    display: block;
+    margin: 8px auto;
+    background-color: var(--cartRed);
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+#socialButtons li:nth-child(even) {
+    background-color: var(--cartBlue);
+}
+#socialButtons a {
+    color: var(--lightBlue);
+}  
+#socialButtons a:hover {
+    color: var(--cartGreen);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes spinFadeIn {
+    from {opacity: 0; transform: rotate(0deg);}
+    to {opacity: 1; transform: rotate(360deg);}
+}
+
+@keyframes moveLeft {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0);}
+}
+
+@keyframes moveRight {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0);}
+}
+
+@media (max-width: 600px) {
+    nav {
+        bottom: 0;
+        top: auto;
+        left: auto;
+        right: 0;
+    }
+    nav a {
+        margin: 5px 0px;
+    }
+}

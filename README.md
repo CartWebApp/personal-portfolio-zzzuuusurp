@@ -1,1 +1,6 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PS10sSKP)
+# portfolio
+Contains a homepage with my experience at CART, projects, extracarriculars, and some information about me
+There is a carousel for a 5-year-plan that showcases my limited but still thought-out plan for college
+Contains some CSS animations
+Resume page in HTML for easier accessability
+Contact me page with a form. Should end up being submitted to netlify's forms.
