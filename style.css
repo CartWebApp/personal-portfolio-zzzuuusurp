@@ -230,9 +230,11 @@ button {
     justify-content: space-between;
     align-items: center;
     animation: fade-in 200ms forwards ease-out;
+    min-height: 130%;
     background-color: var(--transparentWhite);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .thingy h2 {
     color: var(--black);
