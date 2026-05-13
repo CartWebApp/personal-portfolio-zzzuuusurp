@@ -476,14 +476,14 @@ input#things {
     margin: auto;
     list-style: none;
 }
-#socialButtons li {
+#socialButtons div {
     display: block;
     margin: 8px auto;
     background-color: var(--cartRed);
     padding: 10px 25px;
     border-radius: 20px;
 }
-#socialButtons li:nth-child(even) {
+#socialButtons div:nth-child(even) {
     background-color: var(--cartBlue);
 }
 #socialButtons a {
