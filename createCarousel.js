@@ -10,11 +10,13 @@ function createCarouselCards() {
         const card = document.createElement('div');
         card.classList.add('thingy');
         card.innerHTML = `
+            <section class='textContent'>
             <h2>${project.title}</h2>
             <p>${project.desc}</p>
             <p><em>${project.useDesc}</em></p>
             <a href=${project.href} target='_blank'>View Project</a>
             <a href="case_study.html" class="blueBtn">View Case Study</a>
+            </section>
             <div class="buttonList"></div>
         `;
         card.style.backgroundImage = `url(${project.img})`;
@@ -36,9 +38,11 @@ function createCarouselCards() {
         const card = document.createElement('div');
         card.classList.add('thingy');
         card.innerHTML = `
+            <section class='textContent'>
             <h2>${project.title}</h2>
             <p>${project.desc}</p>
             <a href="${project.href}" target="_blank" class="blueBtn">View</a>
+            </section>
             <div class="buttonList"></div>
         `;
         card.style.backgroundImage = `url(${project.img})`;
